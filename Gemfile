@@ -76,3 +76,6 @@ gem 'redis'
 gem 'mysql2', '0.5.5'
 
 gem 'dalli-elasticache'
+
+gem 'graphiql-rails'
+gem 'graphql'
