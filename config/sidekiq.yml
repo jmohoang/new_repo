@@ -1,0 +1,4 @@
+:concurrency: <%= ENV.fetch('SIDEKIQ_CONCURRENCY', 10).to_i %>
+:queues:
+  - <%= ENV.fetch('SIDEKIQ_QUEUE_DEFAULT', 'default') %>
+  - <%= ENV.fetch('SIDEKIQ_QUEUE_MAILERS', 'mailers') %>

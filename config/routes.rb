@@ -16,4 +16,7 @@ Rails.application.routes.draw do
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   post '/graphql', to: 'graphql#execute'
+
+  # Mount the Sidekiq web interface at the /sidekiq path
+  mount Sidekiq::Web => '/sidekiq'
 end
