@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   get 'cache/index'
   root 'cache#index'
+
+  mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
+  post '/graphql', to: 'graphql#execute'
 end
