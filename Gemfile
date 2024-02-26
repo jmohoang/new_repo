@@ -79,3 +79,8 @@ gem 'dalli-elasticache'
 
 gem 'graphiql-rails'
 gem 'graphql'
+
+gem 'bcrypt'
+gem 'graphiql-rails'
+gem 'graphql'
+gem 'jwt'

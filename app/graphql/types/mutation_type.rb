@@ -5,6 +5,7 @@ module Types
   class MutationType < Types::BaseObject
     graphql_name 'Mutation'
 
+    field :signInUser, mutation: Mutations::SignInUser
     field :createUser, mutation: Mutations::CreateUser
   end
 end
