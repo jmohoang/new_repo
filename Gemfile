@@ -67,3 +67,6 @@ group :test do
 end
 
 gem 'twilio-ruby'
+
+gem 'connection_pool'
+gem 'redis'
