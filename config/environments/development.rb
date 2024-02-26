@@ -1,4 +1,5 @@
 require 'active_support/core_ext/integer/time'
+require 'dalli/elasticache'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -82,4 +83,6 @@ Rails.application.configure do
 
   # Set the Twilio Phone Number using the value from the environment variable 'TWILIO_PHONE_NUMBER'
   config.twilio_phone_number = ENV.fetch('TWILIO_PHONE_NUMBER')
+
+  config.cache_store = :elasticache, ElasticacheDalli::ElastiCache.new(endpoint: ENV['MEMCACHED_ENDPOINT'])
 end
