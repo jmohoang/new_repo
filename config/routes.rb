@@ -16,4 +16,7 @@ Rails.application.routes.draw do
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   post '/graphql', to: 'graphql#execute'
+
+  # Mount the GoodJob engine at the specified route
+  mount GoodJob::Engine => 'good_job'
 end
