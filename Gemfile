@@ -86,3 +86,6 @@ gem 'graphql'
 gem 'jwt'
 
 gem 'csv'
+
+gem 'sentry-rails'
+gem 'sentry-ruby'
