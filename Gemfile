@@ -70,3 +70,7 @@ gem 'twilio-ruby'
 
 gem 'connection_pool'
 gem 'redis'
+# frozen_string_literal: true
+
+# Use mysql2 as the database for Active Record
+gem 'mysql2', '0.5.5'
