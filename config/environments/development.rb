@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -19,13 +19,13 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join("tmp/caching-dev.txt").exist?
+  if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      "Cache-Control" => "public, max-age=#{2.days.to_i}"
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -73,4 +73,13 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Set the Twilio Account SID using the value from the environment variable 'TWILIO_ACCOUNT_SID'
+  config.twilio_account_sid = ENV.fetch('TWILIO_ACCOUNT_SID')
+
+  # Set the Twilio Auth Token using the value from the environment variable 'TWILIO_AUTH_TOKEN'
+  config.twilio_auth_token = ENV.fetch('TWILIO_AUTH_TOKEN')
+
+  # Set the Twilio Phone Number using the value from the environment variable 'TWILIO_PHONE_NUMBER'
+  config.twilio_phone_number = ENV.fetch('TWILIO_PHONE_NUMBER')
 end
